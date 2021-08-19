@@ -1,1 +1,1 @@
-# simple-massage-encoder python version
+# simple-massage-encryptor Python version

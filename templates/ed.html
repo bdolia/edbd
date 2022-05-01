@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>{{ current_procedure }}</h3>
+    <form method="post">
+        <label for="key">Key</label>
+        <br>
+
+        <textarea name="key"
+                  placeholder="{{ default_key_value }}"
+                  rows="10"
+                  cols="60"
+                  >{{ request.form['key'] }}</textarea>
+        <br>
+
+        <label for="content">Message</label>
+        <br>
+        <textarea name="content"
+                  placeholder=""
+                  rows="10"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

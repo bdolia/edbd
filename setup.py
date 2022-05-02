@@ -11,11 +11,11 @@ with open(path.join(wd, 'README.md'), encoding='utf-8') as f:
 setup(
     description = 'A text encryptor and decryptor that use a text file as a key.',
     name = 'edbd',
-    version = '0.0.1',
+    version = '0.1.0',
     author = 'Bogdan Dolia',
     author_email = 'cr.co.erph@gmail.com',
     license='GNU General Public License v3.0',
-    url = 'https://github.com/bdolia/edbd',
+    url = 'https://github.com/BogdanDolia/edbd',
     download_url = 'https://github.com/bdolia/edbd/archive/0.0.1.tar.gz',
     long_description=long_description,
     long_description_content_type='text/markdown',

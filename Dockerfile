@@ -5,4 +5,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN python setup.py install
 ENTRYPOINT [ "python", "./main.py" ]
-EXPOSE 80
+EXPOSE 8080

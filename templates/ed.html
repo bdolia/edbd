@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3>{{ current_procedure }}</h3>
-    <form method="post">
+    <form method="post" action="{{ url_for('process') }}">
         <div class="form-group mb-3">
             <label for="content" class="form-label">Message</label>
-            <textarea class="form-control" name="content" placeholder="">{{ request.form['content'] }}</textarea>
+            <textarea class="form-control" name="content" placeholder="">{{ content }}</textarea>
+        </div>
+        <div class="form-group mb-3">
+            <label for="content" class="form-label">Result</label>
+            <textarea class="form-control" readonly>{{ result }}</textarea>
         </div>
         <div class="form-group mb-3">
             <label for="key" class="form-label">Key</label>
             <textarea class="form-control" name="key"
-                      placeholder="{{ default_key_value }}">{{ request.form['key'] }}</textarea>
+                      placeholder="{{ default_key_value }}">{{ key }}</textarea>
         </div>
         <div>
             <br>
-            <button type="submit" class="btn btn-info">Submit</button>
+            <button type="submit" name="action" value="encrypt" class="btn btn-success">Encrypt</button>
+            <button type="submit" name="action" value="decrypt" class="btn btn-danger">Decrypt</button>
+            <button type="submit" name="action" value="clear" class="btn btn-dark">Clear</button>
         </div>
     </form>
 {% endblock %}

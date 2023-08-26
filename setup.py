@@ -10,7 +10,7 @@ with open(path.join(wd, 'README.md'), encoding='utf-8') as f:
 setup(
     description='A text encryptor and decryptor that use a text file as a key.',
     name='edbd',
-    version='0.3.0',
+    version='0.3.1',
     author='Bogdan Dolia',
     author_email='cr.co.erph@gmail.com',
     license='GNU General Public License v3.0',

@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>{% block title %} {% endblock %}</title>
     <style>
-        .message {
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3
-        }
-        nav a {
-            color: #d64161;
-            font-size: 3em;
-            margin-left: 50px;
-            text-decoration: none;
+        /* Initial state: Apply blur to the textarea content */
+        textarea[name="key"] {
+            filter: blur(3px); /* Adjust the value for desired blur level */
         }
 
+        /* Focused state: Remove the blur */
+        textarea[name="key"]:focus {
+            filter: none;
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="{{ url_for('encrypt') }}">Encrypt</a>
-        <a href="{{ url_for('decrypt') }}">Decrypt</a>
-        <a href="{{ url_for('index') }}">Reset</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %} {% endblock %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('encrypt') }}">Edbd</a>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('encrypt') }}">Encrypt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('decrypt') }}">Decrypt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">Reset</a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
+<hr>
+<div class="content">
+    {% block content %} {% endblock %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 </html>
